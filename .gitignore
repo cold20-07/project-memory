@@ -1,0 +1,12 @@
+# Node.js
+node_modules/
+dist/
+npm-debug.log
+.env
+.DS_Store
+
+# Project Memory (Machine Metadata)
+.memory/state.json
+
+# Test project artifacts
+test-project/

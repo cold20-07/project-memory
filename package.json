@@ -1,0 +1,54 @@
+{
+  "name": "@satyam/project-memory",
+  "version": "1.0.0",
+  "description": "Persistent Long-Term Memory and Wall of Shame for AI agents. Compatible with Cursor, Windsurf, VS Code, Cline, and any AI-native IDE.",
+  "type": "module",
+  "main": "dist/cli.js",
+  "bin": {
+    "project-memory": "dist/bin/project-memory.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "typecheck": "tsc --noEmit"
+  },
+  "files": [
+    "dist/",
+    "templates/",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "ai",
+    "agent",
+    "memory",
+    "cursor",
+    "windsurf",
+    "cline",
+    "vscode",
+    "cli",
+    "developer-tools"
+  ],
+  "author": "satyam",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cold20-07/project-memory.git"
+  },
+  "bugs": {
+    "url": "https://github.com/cold20-07/project-memory/issues"
+  },
+  "homepage": "https://github.com/cold20-07/project-memory#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "picocolors": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.7.0"
+  }
+}
