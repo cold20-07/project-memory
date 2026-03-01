@@ -6,6 +6,7 @@
 import { join } from 'node:path';
 import { atomicWrite, safeReadFile } from './fs-utils.js';
 import {
+    PROJECT_MEMORY_DIR,
     MEMORY_DIR,
     CONTEXT_FILE,
     LOG_SECTION_MAP,
@@ -18,7 +19,7 @@ import {
  * Returns null if the file doesn't exist.
  */
 export async function readContext(projectRoot: string): Promise<string | null> {
-    const contextPath = join(projectRoot, MEMORY_DIR, CONTEXT_FILE);
+    const contextPath = join(projectRoot, PROJECT_MEMORY_DIR, MEMORY_DIR, CONTEXT_FILE);
     return safeReadFile(contextPath);
 }
 
@@ -92,7 +93,7 @@ export async function appendToSection(
     entryType: LogEntryType,
     message: string,
 ): Promise<void> {
-    const contextPath = join(projectRoot, MEMORY_DIR, CONTEXT_FILE);
+    const contextPath = join(projectRoot, PROJECT_MEMORY_DIR, MEMORY_DIR, CONTEXT_FILE);
     const content = await safeReadFile(contextPath);
 
     if (!content) {

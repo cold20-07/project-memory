@@ -37,7 +37,10 @@ export const LOG_SECTION_MAP: Record<LogEntryType, string> = {
     todo: 'Active Tasks',
 } as const;
 
-/** Default memory directory name */
+/** Main project-memory directory */
+export const PROJECT_MEMORY_DIR = '.project-memory';
+
+/** Default memory directory name (inside PROJECT_MEMORY_DIR) */
 export const MEMORY_DIR = '.memory';
 
 /** Context file name */

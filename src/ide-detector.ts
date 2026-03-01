@@ -67,6 +67,16 @@ const IDE_CONFIGS = [
         path: '.github/copilot-instructions.md',
         dirMode: false,
     },
+    {
+        name: 'Aider',
+        path: '.aider.conf.yml',
+        dirMode: false,
+    },
+    {
+        name: 'Generic Agent',
+        path: 'instructions.md',
+        dirMode: false,
+    },
 ] as const;
 
 /**

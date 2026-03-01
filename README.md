@@ -8,7 +8,7 @@ Project-Memory solves the "Agent Amnesia" problem. AI agents (in Cursor, Windsur
 
 Run this in your project root:
 ```bash
-npx project-memory init
+npx @satyamshree/project-memory init
 ```
 
 ## ✨ Features
@@ -17,14 +17,14 @@ npx project-memory init
 - **Wall of Shame**: A dedicated section for mistakes to *never* repeat. Agents check this before every task.
 - **Project Soul**: Define the "vibe", tech stack, and non-negotiable principles of your codebase.
 - **Token Optimization**: The `prune` command collapses old completed tasks into a single history line to keep context small and fast.
-- **Local-First & Team-Friendly**: Memory is stored in `.memory/context.md`. Commit it to Git to share project context with your whole team.
+- **Local-First & Team-Friendly**: Memory is stored in `.project-memory/.memory/context.md`. Commit it to Git to share project context with your whole team.
 
 ## 🛠 Commands
 
 ### `init`
-Scaffolds the `.memory/` folder and injects instructions into your IDE's config files.
+Scaffolds the `.project-memory/` folder and injects instructions into your IDE's config files inside that folder.
 ```bash
-npx project-memory init
+npx @satyamshree/project-memory init
 ```
 
 ### `log`
@@ -49,18 +49,27 @@ npx project-memory prune
 
 ## 📂 Structure
 
-- `.memory/context.md`: The human-readable source of truth. **Commit this.**
-- `.memory/state.json`: Machine-readable metadata (versioning, last update). **Git-ignored by default.**
+To keep your project clean while ensuring AI agents find the memory automatically, we use a hybrid structure:
 
-## 🤝 IDE Compatibility
+- **`.project-memory/`**: The "Brain" folder. Contains `context.md` (shared memory) and `state.json` (metadata).
+- **Project Root**: Contains small "trigger" files (like `.cursorrules`, `.clinerules`) that tell the AI agent to use the memory tool. These are required for full autonomy.
+
+## 🤝 IDE Compatibility (Auto-Detection)
 
 | IDE / Extension | Config File | Status |
 |---|---|---|
 | **Cursor** | `.cursorrules` / `.cursor/rules/` | ✅ Supported |
 | **Windsurf** | `.windsurfrules` | ✅ Supported |
-| **Cline** | `.clinerules` | ✅ Supported |
+| **Cline / Roo Code** | `.clinerules` | ✅ Supported |
 | **GitHub Copilot** | `.github/copilot-instructions.md` | ✅ Supported |
-| **Standard VS Code** | Instructions via `.clinerules` | ✅ Supported |
+| **Aider** | `.aider.conf.yml` | ✅ Supported |
+| **Generic / Others** | `instructions.md` | ✅ Supported |
+
+### 🔍 Using with other IDEs / Agents
+If you are using an IDE or AI Agent not listed above, simply tell the agent once at the start of your session:
+> "Read the project instructions in `.project-memory/instructions.md` and follow them."
+
+The `instructions.md` file is automatically created during `init` and contains everything the agent needs to know about using this tool.
 
 ---
 

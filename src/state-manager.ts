@@ -6,6 +6,7 @@
 import { join } from 'node:path';
 import { atomicWrite, safeReadFile } from './fs-utils.js';
 import {
+    PROJECT_MEMORY_DIR,
     MEMORY_DIR,
     STATE_FILE,
     SCHEMA_VERSION,
@@ -16,7 +17,7 @@ import {
  * Read state.json. Returns null if it doesn't exist.
  */
 export async function readState(projectRoot: string): Promise<ProjectState | null> {
-    const statePath = join(projectRoot, MEMORY_DIR, STATE_FILE);
+    const statePath = join(projectRoot, PROJECT_MEMORY_DIR, MEMORY_DIR, STATE_FILE);
     const raw = await safeReadFile(statePath);
 
     if (!raw) return null;
@@ -31,7 +32,7 @@ export async function writeState(
     projectRoot: string,
     state: ProjectState,
 ): Promise<void> {
-    const statePath = join(projectRoot, MEMORY_DIR, STATE_FILE);
+    const statePath = join(projectRoot, PROJECT_MEMORY_DIR, MEMORY_DIR, STATE_FILE);
     const content = JSON.stringify(state, null, 2) + '\n';
     await atomicWrite(statePath, content);
 }

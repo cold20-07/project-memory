@@ -9,7 +9,7 @@
 import { join } from 'node:path';
 import { atomicWrite, safeReadFile } from './fs-utils.js';
 import { parseSections, reassembleSections } from './context-manager.js';
-import { MEMORY_DIR, CONTEXT_FILE, PRUNE_THRESHOLD } from './types.js';
+import { PROJECT_MEMORY_DIR, MEMORY_DIR, CONTEXT_FILE, PRUNE_THRESHOLD } from './types.js';
 
 /** Result of a prune operation. */
 export interface PruneResult {
@@ -87,7 +87,7 @@ export async function prune(
     projectRoot: string,
     maxLines: number = PRUNE_THRESHOLD,
 ): Promise<PruneResult> {
-    const contextPath = join(projectRoot, MEMORY_DIR, CONTEXT_FILE);
+    const contextPath = join(projectRoot, PROJECT_MEMORY_DIR, MEMORY_DIR, CONTEXT_FILE);
     const content = await safeReadFile(contextPath);
 
     if (!content) {

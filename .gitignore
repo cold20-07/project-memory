@@ -10,3 +10,4 @@ npm-debug.log
 
 # Test project artifacts
 test-project/
+.project-memory\.memory\state.json
