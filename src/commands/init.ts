@@ -56,7 +56,7 @@ export async function initCommand(options: InitOptions = {}): Promise<void> {
 
     // Step 4: Update .gitignore
     await appendToGitignore(projectRoot, [
-        join(PROJECT_MEMORY_DIR, MEMORY_DIR, 'state.json'),
+        `${PROJECT_MEMORY_DIR}/${MEMORY_DIR}/state.json`,
     ]);
     console.log(pc.green('✓') + ` Added ${PROJECT_MEMORY_DIR} to .gitignore`);
 
