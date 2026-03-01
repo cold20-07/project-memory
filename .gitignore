@@ -4,6 +4,7 @@ dist/
 npm-debug.log
 .env
 .DS_Store
+.npmrc
 
 # Project Memory (Machine Metadata)
 .memory/state.json
