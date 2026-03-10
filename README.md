@@ -1,22 +1,26 @@
-# Project-Memory 🧠
+# Project-Memory 
 
 **Persistent "Long-Term Memory" and "Wall of Shame" for AI Agents.**
 
 Project-Memory solves the "Agent Amnesia" problem. AI agents (in Cursor, Windsurf, Cline, etc.) often forget key architectural decisions, repeat the same mistakes, or lose track of long-term goals between sessions. This tool provides a structured, human-readable context that agents automatically read and update.
 
-## 🚀 One-Line Setup
+##  One-Line Setup
 
 Run this in your project root:
 ```bash
 npx @satyamshree/project-memory init
 ```
 
+<<<<<<< HEAD
 This creates:
 - `.project-memory/.memory/context.md` — the shared project memory
 - `scripts/project-memory.js` — a local fallback script (works even when npx is broken)
 - IDE rule files so your AI agent discovers the memory automatically
 
 ## ✨ Features
+=======
+##  Features
+>>>>>>> 7cc3225eb232323611e87f607b926a8872aa0346
 
 - **Rule Injection**: Auto-detects and configures Cursor (`.cursorrules`), Windsurf (`.windsurfrules`), Cline (`.clinerules`), and GitHub Copilot.
 - **Wall of Shame**: A dedicated section for mistakes to *never* repeat. Agents check this before every task.
@@ -25,7 +29,7 @@ This creates:
 - **Local-First & Team-Friendly**: Memory is stored in `.project-memory/.memory/context.md`. Commit it to Git to share project context with your whole team.
 - **Self-Healing**: A local fallback script (`scripts/project-memory.js`) is included in every project — even if npx breaks, memory keeps working.
 
-## 🛠 Commands
+##  Commands
 
 All commands work via the local script (recommended) or npx:
 
@@ -59,7 +63,7 @@ Collapses "Completed Tasks" into "History" when the file gets too long.
 node scripts/project-memory.js prune
 ```
 
-## 📂 Structure
+##  Structure
 
 To keep your project clean while ensuring AI agents find the memory automatically, we use a hybrid structure:
 
@@ -67,6 +71,7 @@ To keep your project clean while ensuring AI agents find the memory automaticall
 - **`scripts/project-memory.js`**: Local fallback runner. Commit this to version control — it ensures the tool works even when npx is blocked (e.g. Windows PowerShell execution policy).
 - **Project Root**: Contains small "trigger" files (like `.cursorrules`, `.clinerules`) that tell the AI agent to use the memory tool. These are required for full autonomy.
 
+<<<<<<< HEAD
 ## ⚡ Troubleshooting
 
 ### Windows PowerShell: "cannot be loaded because running scripts is disabled"
@@ -82,6 +87,9 @@ npm install -D @satyamshree/project-memory
 ```
 
 ## 🤝 IDE Compatibility (Auto-Detection)
+=======
+##  IDE Compatibility (Auto-Detection)
+>>>>>>> 7cc3225eb232323611e87f607b926a8872aa0346
 
 | IDE / Extension | Config File | Status |
 |---|---|---|
@@ -92,7 +100,7 @@ npm install -D @satyamshree/project-memory
 | **Aider** | `.aider.conf.yml` | ✅ Supported |
 | **Generic / Others** | `instructions.md` | ✅ Supported |
 
-### 🔍 Using with other IDEs / Agents
+###  Using with other IDEs / Agents
 If you are using an IDE or AI Agent not listed above, simply tell the agent once at the start of your session:
 > "Read the project instructions in `.project-memory/instructions.md` and follow them."
 
