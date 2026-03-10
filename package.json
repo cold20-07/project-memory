@@ -1,6 +1,6 @@
 {
   "name": "@satyamshree/project-memory",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Persistent Long-Term Memory and Wall of Shame for AI agents. Compatible with Cursor, Windsurf, VS Code, Cline, and any AI-native IDE.",
   "type": "module",
   "main": "dist/cli.js",

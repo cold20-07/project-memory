@@ -37,3 +37,10 @@ export async function renderContext(projectName: string): Promise<string> {
 export async function loadRulesSnippet(): Promise<string> {
     return loadTemplate('rules-snippet.txt');
 }
+
+/**
+ * Load the local fallback script template.
+ */
+export async function loadLocalScript(): Promise<string> {
+    return loadTemplate('local-script.js');
+}
